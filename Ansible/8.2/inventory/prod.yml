@@ -1,0 +1,6 @@
+---
+clickhouse:
+  hosts:
+    clickhouse-01:
+      ansible_host: 51.250.72.83
+      ansible_ssh_user: phenom
