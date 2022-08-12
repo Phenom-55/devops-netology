@@ -1,0 +1,3 @@
+---
+# Install Lighthouse
+- include_tasks: install_lighthouse.yml
