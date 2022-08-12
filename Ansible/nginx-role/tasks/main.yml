@@ -1,0 +1,3 @@
+---
+# Install Nginx
+- include_tasks: install_nginx.yml
