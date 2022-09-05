@@ -1,0 +1,30 @@
+## Что делает playbook?
+
+Плейбук устанавливает три приложения на разных хостах YandexCloud:
+
+- Clickhouse
+- Lighthouse, Nginx	
+- Vector, Nginx
+
+
+## Какие у него есть параметры?
+
+- Приложения устанавливаются из RPM-пакетов.
+- IP хостов задаются в файле: playbook/inventory/prod.yml
+- Переменные изменяются в: playbook/group_vars
+- Конфигурация приложений изменяется в: playbook/templates
+
+
+## Веб-доступ к базе данных ClickHouse
+
+- После установки нужно в строке браузера ввести IP машины где установлен lighthouse
+- Затем в диалоговом окне ввести IP машины, на которой развернут clickhouse
+- Для проверки записи логов нужно в строке браузера ввести IP хоста где установлен vector и открыть страничку
+- Теперь на веб странице lighthouse мы увидим логи из /var/log/nginx/access.log с сервера где установлен vector. Например: `3.123.65.68 - - [31/Jul/2022:11:49:32 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:103.0) Gecko/20100101 Firefox/103.0" "-"`
+
+## Сcылка на репозиторий vector-role
+https://github.com/Phenom-55/vector-role
+
+## Сcылка на репозиторий lighthouse-role
+https://github.com/Phenom-55/lighthouse-role
+
